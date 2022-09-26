@@ -4,7 +4,7 @@
 #
 Name     : editorconfig-core-c
 Version  : 0.12.5
-Release  : 1
+Release  : 2
 URL      : https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.5/editorconfig-core-c-0.12.5.tar.gz
 Source0  : https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.5/editorconfig-core-c-0.12.5.tar.gz
 Summary  : Library handling EditorConfig files, a file format defining coding styles in projects.
@@ -79,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1664211245
+export SOURCE_DATE_EPOCH=1664211575
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -90,7 +90,7 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
-%cmake ..
+%cmake .. -DCMAKE_INSTALL_LIBDIR=lib64
 make
 popd
 
@@ -102,7 +102,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test || :
 
 %install
-export SOURCE_DATE_EPOCH=1664211245
+export SOURCE_DATE_EPOCH=1664211575
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/editorconfig-core-c
 cp %{_builddir}/editorconfig-core-c-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/editorconfig-core-c/46e70de31a676e33f85c43719cdeff01a87fd63f
