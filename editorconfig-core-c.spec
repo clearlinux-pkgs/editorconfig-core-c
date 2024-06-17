@@ -6,10 +6,10 @@
 # autospec commit: fbcebd0
 #
 Name     : editorconfig-core-c
-Version  : 0.12.8
-Release  : 6
-URL      : https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.8/editorconfig-core-c-0.12.8.tar.gz
-Source0  : https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.8/editorconfig-core-c-0.12.8.tar.gz
+Version  : 0.12.9
+Release  : 7
+URL      : https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.9/editorconfig-core-c-0.12.9.tar.gz
+Source0  : https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.9/editorconfig-core-c-0.12.9.tar.gz
 Summary  : Library handling EditorConfig files, a file format defining coding styles in projects.
 Group    : Development/Tools
 License  : MIT
@@ -78,15 +78,15 @@ man components for the editorconfig-core-c package.
 
 
 %prep
-%setup -q -n editorconfig-core-c-0.12.8
-cd %{_builddir}/editorconfig-core-c-0.12.8
+%setup -q -n editorconfig-core-c-0.12.9
+cd %{_builddir}/editorconfig-core-c-0.12.9
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1718288498
+export SOURCE_DATE_EPOCH=1718600415
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -156,7 +156,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1718288498
+export SOURCE_DATE_EPOCH=1718600415
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/editorconfig-core-c
 cp %{_builddir}/editorconfig-core-c-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/editorconfig-core-c/bf512001e2d4cab86c6291e9dd733ac364fc1cc1 || :
@@ -176,9 +176,9 @@ popd
 
 %files bin
 %defattr(-,root,root,-)
-/V3/usr/bin/editorconfig-0.12.8
+/V3/usr/bin/editorconfig-0.12.9
 /usr/bin/editorconfig
-/usr/bin/editorconfig-0.12.8
+/usr/bin/editorconfig-0.12.9
 
 %files dev
 %defattr(-,root,root,-)
@@ -195,9 +195,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libeditorconfig.so.0.12.8
+/V3/usr/lib64/libeditorconfig.so.0.12.9
 /usr/lib64/libeditorconfig.so.0
-/usr/lib64/libeditorconfig.so.0.12.8
+/usr/lib64/libeditorconfig.so.0.12.9
 
 %files license
 %defattr(0644,root,root,0755)
